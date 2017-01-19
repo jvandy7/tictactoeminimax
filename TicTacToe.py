@@ -54,6 +54,7 @@ class Game:
 
         #minimax with alpha beta pruning  node represents board state alpha best we've found beta worst we've found
     def minimax(self,player,alpha,beta):
+       
             #computer lost
         if self.checkWin()=="X":
             return -1
@@ -77,8 +78,7 @@ class Game:
                 if score > alpha:
                     alpha = score
                 if alpha >=beta:
-                    break
-                return alpha
+                    return alpha
             #players move
             elif player == "X":
                  #check if they have a better move
@@ -88,13 +88,12 @@ class Game:
                 if score < beta:
                     beta = score
                 if beta <= alpha:
-                    return alpha
-                return beta
-        if player == "O":
-            return alpha
-        else:
+                    return beta
+
+        if player == "X":
             return beta
-                
+        return alpha
+
     #computers turn returns move it should make
     def playComputer(self):
         # impossible heuristic value to start with
@@ -133,7 +132,7 @@ if __name__ =="__main__":
     game = Game()
     print("Welcome to Tic Tac Toe when asked to enter a move the positions on the board are labelled as so\n" \
     "1 2 3\n4 5 6\n7 8 9\n")
-    
+
     while(not game.isDone()[0]):
         valids = game.validMoves()
         print(game)

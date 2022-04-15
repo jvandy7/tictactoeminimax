@@ -1,3 +1,3 @@
-#TicTacToe with alpha beta pruning minimax
-Created for fun and to showcase certain concepts to tutoring students.  
-Could be cleaned up for sure
+TicTacToe with alpha beta pruning minimax
+Created for fun and to showcase concepts to tutoring students.  
+Likely some low hanging fruit clean up potentials.
